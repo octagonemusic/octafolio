@@ -46,7 +46,7 @@ export default function DockNavbar() {
 
   return (
     <nav className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 w-[90%] sm:w-auto">
-      <div className="flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-3 py-3 bg-surface0/80 backdrop-blur-md border-blue border-2 rounded-xl shadow-lg">
+      <div className="flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-3 py-3 bg-surface0/80 backdrop-blur-md border-blue border-2 rounded-xl shadow-lg max-w-full">
         {navItems.map((item) => (
           <button
             key={item.id}
@@ -61,7 +61,9 @@ export default function DockNavbar() {
               }
             `}
           >
-            <span className={`font-bold text-sm sm:text-[1rem]`}>{item.label}</span>
+            <span className={`font-bold text-sm sm:text-[1rem]`}>
+              {item.label}
+            </span>
           </button>
         ))}
       </div>
