@@ -61,7 +61,7 @@ export default function DockNavbar() {
               }
             `}
           >
-            <span className={`font-bold text-sm sm:text-base`}>{item.label}</span>
+            <span className={`font-bold`}>{item.label}</span>
           </button>
         ))}
       </div>
