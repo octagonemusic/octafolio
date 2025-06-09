@@ -45,14 +45,14 @@ export default function DockNavbar() {
   };
 
   return (
-    <nav className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
-      <div className="flex items-center justify-center gap-2 px-3 py-3 bg-surface0/80 backdrop-blur-md border-blue border-2 rounded-xl shadow-lg">
+    <nav className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 w-[90%] sm:w-auto">
+      <div className="flex items-center justify-center gap-2 sm:gap-2 px-2 sm:px-3 py-3 bg-surface0/80 backdrop-blur-md border-blue border-2 rounded-xl shadow-lg">
         {navItems.map((item) => (
           <button
             key={item.id}
             onClick={() => scrollToSection(item.id)}
             className={`
-              relative px-4 py-1 rounded-lg
+              relative px-4 sm:px-4 py-1 rounded-lg
               transition-all duration-300 ease-out
               ${
                 activeSection === item.id
