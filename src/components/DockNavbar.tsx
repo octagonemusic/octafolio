@@ -45,15 +45,16 @@ export default function DockNavbar() {
   };
 
   return (
-    <nav className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 w-[90%] sm:w-auto">
-      <div className="flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-3 py-3 bg-surface0/80 backdrop-blur-md border-blue border-2 rounded-xl shadow-lg max-w-full">
+    <nav className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-md sm:w-auto sm:max-w-none">
+      <div className="flex items-center justify-center gap-1 sm:gap-2 px-2 xs:px-3 sm:px-4 py-2.5 xs:py-3 bg-surface0/80 backdrop-blur-md border-blue border-2 rounded-xl shadow-lg overflow-hidden">
         {navItems.map((item) => (
           <button
             key={item.id}
             onClick={() => scrollToSection(item.id)}
             className={`
               relative px-2 sm:px-4 py-1 rounded-lg
-              transition-all duration-300 ease-out
+              transition-all duration-250 ease-out
+              flex-shrink-0 min-w-0
               ${
                 activeSection === item.id
                   ? "bg-maroon text-base"
@@ -61,7 +62,7 @@ export default function DockNavbar() {
               }
             `}
           >
-            <span className={`font-bold text-xs md:text-[1rem]`}>
+            <span className="font-bold text-sm sm:text-[1rem] whitespace-nowrap overflow-hidden text-ellipsis">
               {item.label}
             </span>
           </button>
