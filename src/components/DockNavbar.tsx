@@ -20,7 +20,7 @@ const navItems: NavItem[] = [
 export default function DockNavbar() {
   const [activeSection, setActiveSection] = useState("home");
   const shouldReduceMotion = useReducedMotion();
-  const scrollTimeoutRef = useRef<NodeJS.Timeout>();
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleScroll = useCallback(() => {
     if (scrollTimeoutRef.current) {
