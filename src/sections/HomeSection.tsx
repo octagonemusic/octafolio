@@ -62,14 +62,14 @@ export default function HomeSection() {
           {/* Left Column - Main Content */}
           <motion.div 
             className="lg:col-span-3 space-y-12 text-center lg:text-left"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {/* Name with gradient effect */}
             <motion.div 
               className="space-y-3"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: -30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
@@ -101,8 +101,8 @@ export default function HomeSection() {
             {/* Social Section */}
             <motion.div 
               className="space-y-6"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
             >
               <h3 className="text-xl sm:text-2xl font-bold font-mono text-subtext-0 text-center lg:text-left">
@@ -114,7 +114,7 @@ export default function HomeSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group bg-surface0 hover:bg-mauve text-text hover:text-crust px-6 py-3 rounded-lg font-mono text-[1rem] transition-colors duration-200 flex items-center space-x-2 hover:shadow-lg hover:shadow-mauve/20"
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ 
                     opacity: { duration: 0.5, delay: 0.8, ease: "easeOut" },
@@ -141,7 +141,7 @@ export default function HomeSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group bg-surface0 hover:bg-blue text-text hover:text-crust px-6 py-3 rounded-lg font-mono text-1rem transition-colors duration-200 flex items-center space-x-2 hover:shadow-lg hover:shadow-blue/20"
-                  initial={{ opacity: 0, x: 20 }}
+                  initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ 
                     opacity: { duration: 0.5, delay: 0.9, ease: "easeOut" },
@@ -177,8 +177,8 @@ export default function HomeSection() {
             <div className="space-y-6">
               <motion.p 
                 className="text-lg sm:text-xl text-subtext1 leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
               >
                 I love building{" "}
@@ -200,8 +200,8 @@ export default function HomeSection() {
 
               <motion.p 
                 className="text-lg sm:text-xl text-subtext1 leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
               >
                 Right now, I&apos;m focused on learning, tinkering, and
@@ -214,8 +214,8 @@ export default function HomeSection() {
 
               <motion.p 
                 className="text-lg sm:text-xl text-subtext1 leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
               >
                 When I&apos;m not building or breaking stuff, I&apos;m probably
