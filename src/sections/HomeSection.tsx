@@ -61,20 +61,19 @@ export default function HomeSection() {
           {/* Left Column - Main Content */}
           <div className="lg:col-span-3 space-y-12 text-center lg:text-left">
             {/* Name with gradient effect */}
-            <div className="space-y-6">
+            <div className="space-y-3">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold font-mono leading-tight">
                 <span className="bg-gradient-to-r from-mauve via-pink to-red bg-clip-text text-text">
                   Bhargav Prasad
                 </span>
               </h1>
+              {/* Tagline with colors */}
+              <p className="text-xl sm:text-2xl lg:text-3xl font-mono">
+                <span className="text-pink">CS Student</span>
+                <span className="text-subtext0 mx-3">·</span>
+                <span className="text-blue">Amrita Vishwa Vidyapeetham</span>
+              </p>
             </div>
-
-            {/* Tagline with colors */}
-            <p className="text-xl sm:text-2xl lg:text-3xl font-mono">
-              <span className="text-pink">CS Student</span>
-              <span className="text-subtext0 mx-3">·</span>
-              <span className="text-blue">Amrita Vishwa Vidyapeetham</span>
-            </p>
 
             {/* Role Typewriter Effect - Hidden on mobile */}
             <div className="hidden sm:block text-xl lg:text-2xl font-mono">
@@ -84,13 +83,13 @@ export default function HomeSection() {
             </div>
 
             {/* Social Section */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-mono text-subtext0 text-center lg:text-left">
+            <div className="space-y-6">
+              <h3 className="text-xl sm:text-2xl font-bold font-mono text-subtext-0 text-center lg:text-left">
                 Let&apos;s connect
               </h3>
               <div className="flex justify-center lg:justify-start space-x-6">
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/octagonemusic"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group bg-surface0 hover:bg-mauve text-text hover:text-crust px-6 py-3 rounded-lg font-mono text-[1rem] transition-all duration-200 flex items-center space-x-2 hover:scale-110 hover:shadow-lg hover:shadow-mauve/20 hover:-translate-y-1 active:scale-95 active:translate-y-0"
@@ -107,7 +106,7 @@ export default function HomeSection() {
                   </span>
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/bhargav-prasad-5a183a261/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group bg-surface0 hover:bg-blue text-text hover:text-crust px-6 py-3 rounded-lg font-mono text-1rem transition-all duration-200 flex items-center space-x-2 hover:scale-110 hover:shadow-lg hover:shadow-blue/20 hover:-translate-y-1 active:scale-95 active:translate-y-0"
