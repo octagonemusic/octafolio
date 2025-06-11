@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const roleTexts = [
   "Linux Enthusiast",
@@ -59,9 +60,19 @@ export default function HomeSection() {
       <div className="w-full max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 lg:gap-20 items-center">
           {/* Left Column - Main Content */}
-          <div className="lg:col-span-3 space-y-12 text-center lg:text-left">
+          <motion.div 
+            className="lg:col-span-3 space-y-12 text-center lg:text-left"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             {/* Name with gradient effect */}
-            <div className="space-y-3">
+            <motion.div 
+              className="space-y-3"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            >
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold font-mono leading-tight">
                 <span className="bg-gradient-to-r from-mauve via-pink to-red bg-clip-text text-text">
                   Bhargav Prasad
@@ -73,26 +84,46 @@ export default function HomeSection() {
                 <span className="text-subtext0 mx-3">·</span>
                 <span className="text-blue">Amrita Vishwa Vidyapeetham</span>
               </p>
-            </div>
+            </motion.div>
 
             {/* Role Typewriter Effect - Hidden on mobile */}
-            <div className="hidden sm:block text-xl lg:text-2xl font-mono">
+            <motion.div 
+              className="hidden sm:block text-xl lg:text-2xl font-mono"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            >
               <span className="text-overlay0">~/octagone %</span>{" "}
               <span className="text-yellow">{roleText}</span>
               <span className="animate-pulse text-mauve">|</span>
-            </div>
+            </motion.div>
 
             {/* Social Section */}
-            <div className="space-y-6">
+            <motion.div 
+              className="space-y-6"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+            >
               <h3 className="text-xl sm:text-2xl font-bold font-mono text-subtext-0 text-center lg:text-left">
                 Let&apos;s connect
               </h3>
               <div className="flex justify-center lg:justify-start space-x-6">
-                <a
+                <motion.a
                   href="https://github.com/octagonemusic"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-surface0 hover:bg-mauve text-text hover:text-crust px-6 py-3 rounded-lg font-mono text-[1rem] transition-all duration-200 flex items-center space-x-2 hover:scale-110 hover:shadow-lg hover:shadow-mauve/20 hover:-translate-y-1 active:scale-95 active:translate-y-0"
+                  className="group bg-surface0 hover:bg-mauve text-text hover:text-crust px-6 py-3 rounded-lg font-mono text-[1rem] transition-colors duration-200 flex items-center space-x-2 hover:shadow-lg hover:shadow-mauve/20"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ 
+                    opacity: { duration: 0.5, delay: 0.8, ease: "easeOut" },
+                    x: { duration: 0.5, delay: 0.8, ease: "easeOut" },
+                    scale: { duration: 0.15 },
+                    y: { duration: 0.15 }
+                  }}
+                  whileHover={{ scale: 1.1, y: -4, transition: { duration: 0.15 } }}
+                  whileTap={{ scale: 0.95, y: 0, transition: { duration: 0.1 } }}
                 >
                   <svg
                     className="w-5 h-5 group-hover:rotate-[360deg] group-hover:scale-125 transition-all duration-500 ease-out"
@@ -104,12 +135,22 @@ export default function HomeSection() {
                   <span className="group-hover:font-bold transition-all duration-200">
                     GitHub
                   </span>
-                </a>
-                <a
+                </motion.a>
+                <motion.a
                   href="https://www.linkedin.com/in/bhargav-prasad-5a183a261/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-surface0 hover:bg-blue text-text hover:text-crust px-6 py-3 rounded-lg font-mono text-1rem transition-all duration-200 flex items-center space-x-2 hover:scale-110 hover:shadow-lg hover:shadow-blue/20 hover:-translate-y-1 active:scale-95 active:translate-y-0"
+                  className="group bg-surface0 hover:bg-blue text-text hover:text-crust px-6 py-3 rounded-lg font-mono text-1rem transition-colors duration-200 flex items-center space-x-2 hover:shadow-lg hover:shadow-blue/20"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ 
+                    opacity: { duration: 0.5, delay: 0.9, ease: "easeOut" },
+                    x: { duration: 0.5, delay: 0.9, ease: "easeOut" },
+                    scale: { duration: 0.15 },
+                    y: { duration: 0.15 }
+                  }}
+                  whileHover={{ scale: 1.1, y: -4, transition: { duration: 0.15 } }}
+                  whileTap={{ scale: 0.95, y: 0, transition: { duration: 0.1 } }}
                 >
                   <svg
                     className="w-5 h-5 group-hover:rotate-[360deg] group-hover:scale-125 transition-all duration-500 ease-out"
@@ -121,15 +162,25 @@ export default function HomeSection() {
                   <span className="group-hover:font-bold transition-all duration-200">
                     LinkedIn
                   </span>
-                </a>
+                </motion.a>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Column - Bio */}
-          <div className="lg:col-span-2 space-y-8 text-center lg:text-left">
+          <motion.div 
+            className="lg:col-span-2 space-y-8 text-center lg:text-left"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          >
             <div className="space-y-6">
-              <p className="text-lg sm:text-xl text-subtext1 leading-relaxed">
+              <motion.p 
+                className="text-lg sm:text-xl text-subtext1 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+              >
                 I love building{" "}
                 <span className="text-maroon font-semibold">
                   clean, thoughtful systems
@@ -145,18 +196,28 @@ export default function HomeSection() {
                   low-level experiments
                 </span>
                 .
-              </p>
+              </motion.p>
 
-              <p className="text-lg sm:text-xl text-subtext1 leading-relaxed">
+              <motion.p 
+                className="text-lg sm:text-xl text-subtext1 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
+              >
                 Right now, I&apos;m focused on learning, tinkering, and
                 <span className="text-yellow font-semibold">
                   {" "}
                   creating things I care about
                 </span>
                 .
-              </p>
+              </motion.p>
 
-              <p className="text-lg sm:text-xl text-subtext1 leading-relaxed">
+              <motion.p 
+                className="text-lg sm:text-xl text-subtext1 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
+              >
                 When I&apos;m not building or breaking stuff, I&apos;m probably
                 <span className="text-blue font-semibold">
                   {" "}
@@ -168,9 +229,9 @@ export default function HomeSection() {
                   organizing my workspace
                 </span>
                 .
-              </p>
+              </motion.p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
