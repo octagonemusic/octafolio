@@ -31,7 +31,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center bg-mantle px-6 sm:px-12 lg:px-20 py-16"
+      className="min-h-screen flex items-center bg-mantle px-6 sm:px-12 lg:px-20 py-16 overflow-x-hidden"
       style={{ willChange: "transform" }}
     >
       <div className="w-full max-w-7xl mx-auto">
@@ -103,12 +103,12 @@ export default function AboutSection() {
           </motion.div>
 
           {/* Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20">
             {/* Left Column */}
             <motion.div
               className="space-y-8"
               initial={
-                shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -60 }
+                shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -20 }
               }
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -122,9 +122,9 @@ export default function AboutSection() {
               <motion.p
                 className="text-lg sm:text-xl text-subtext1 leading-relaxed"
                 initial={
-                  shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -30 }
+                  shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }
                 }
-                whileInView={{ opacity: 1, x: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={
                   shouldReduceMotion
@@ -148,9 +148,9 @@ export default function AboutSection() {
               <motion.p
                 className="text-lg sm:text-xl text-subtext1 leading-relaxed"
                 initial={
-                  shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -30 }
+                  shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }
                 }
-                whileInView={{ opacity: 1, x: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={
                   shouldReduceMotion
@@ -173,9 +173,9 @@ export default function AboutSection() {
               <motion.p
                 className="text-lg sm:text-xl text-subtext1 leading-relaxed"
                 initial={
-                  shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -30 }
+                  shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }
                 }
-                whileInView={{ opacity: 1, x: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={
                   shouldReduceMotion
@@ -195,7 +195,7 @@ export default function AboutSection() {
             <motion.div
               className="space-y-8"
               initial={
-                shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: 60 }
+                shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: 20 }
               }
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -209,9 +209,9 @@ export default function AboutSection() {
               <motion.p
                 className="text-lg sm:text-xl text-subtext1 leading-relaxed"
                 initial={
-                  shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: 30 }
+                  shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }
                 }
-                whileInView={{ opacity: 1, x: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={
                   shouldReduceMotion
@@ -230,9 +230,9 @@ export default function AboutSection() {
               <motion.p
                 className="text-lg sm:text-xl text-subtext1 leading-relaxed"
                 initial={
-                  shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: 30 }
+                  shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }
                 }
-                whileInView={{ opacity: 1, x: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={
                   shouldReduceMotion
@@ -250,9 +250,9 @@ export default function AboutSection() {
               <motion.p
                 className="text-lg sm:text-xl text-subtext1 leading-relaxed"
                 initial={
-                  shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: 30 }
+                  shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }
                 }
-                whileInView={{ opacity: 1, x: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={
                   shouldReduceMotion
