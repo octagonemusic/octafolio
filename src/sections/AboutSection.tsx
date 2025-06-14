@@ -7,7 +7,6 @@ export default function AboutSection() {
   const shouldReduceMotion = useReducedMotion();
   const [whoamiText, setWhoamiText] = useState("");
 
-
   // Typewriter effect for whoami
   useEffect(() => {
     const targetText = "whoami";
@@ -31,7 +30,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center bg-mantle px-6 sm:px-12 lg:px-20 py-16 overflow-x-hidden"
+      className="min-h-screen flex items-center bg-mantle px-6 sm:px-12 lg:px-20 py-16 pt-4 overflow-x-hidden"
       style={{ willChange: "transform" }}
     >
       <div className="w-full max-w-7xl mx-auto">
@@ -62,10 +61,12 @@ export default function AboutSection() {
             }
             style={{ transform: "translateZ(0)" }}
           >
-            <motion.h2 
+            <motion.h2
               className="text-4xl sm:text-5xl lg:text-6xl font-bold font-mono text-text mb-4"
               initial={
-                shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.95 }
+                shouldReduceMotion
+                  ? { opacity: 0 }
+                  : { opacity: 0, scale: 0.95 }
               }
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -77,7 +78,7 @@ export default function AboutSection() {
             >
               About Me
             </motion.h2>
-            <motion.div 
+            <motion.div
               className="text-xl sm:text-2xl font-mono text-overlay0"
               initial={
                 shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }
@@ -92,10 +93,14 @@ export default function AboutSection() {
             >
               <span className="text-overlay0">~/octagone % </span>
               <span className="text-yellow">{whoamiText}</span>
-              <motion.span 
+              <motion.span
                 className="text-mauve"
                 animate={{ opacity: [1, 0] }}
-                transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
+                transition={{
+                  duration: 0.8,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
               >
                 |
               </motion.span>
@@ -141,8 +146,7 @@ export default function AboutSection() {
                 <span className="text-pink font-semibold">
                   full-stack web apps
                 </span>{" "}
-                since I first got into tech. From solo projects to freelance
-                work, it&apos;s a space that I really enjoy working in.
+                since I first got into tech, way back in 2020.{" "}
               </motion.p>
 
               <motion.p
@@ -166,8 +170,8 @@ export default function AboutSection() {
                 </span>
                 on my laptop and run a{" "}
                 <span className="text-red font-semibold">Debian-based </span>
-                homelab, constantly tweaking dotfiles and finding self-hosting
-                tools I find cool or useful.
+                homelab, always tweaking dotfiles and finding cool self-hosting
+                tools.
               </motion.p>
 
               <motion.p
