@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://octafolio.vercel.app/sitemap.xml
