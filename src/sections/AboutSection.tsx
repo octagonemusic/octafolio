@@ -30,7 +30,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center bg-mantle px-6 sm:px-12 lg:px-20 py-16 pt-4 overflow-x-hidden"
+      className="min-h-screen flex items-center bg-mantle px-6 sm:px-12 lg:px-20 py-16 pt-8 overflow-x-hidden"
       style={{ willChange: "transform" }}
     >
       <div className="w-full max-w-7xl mx-auto">
