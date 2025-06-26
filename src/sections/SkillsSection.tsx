@@ -36,17 +36,17 @@ const skillsFileSystem: FileSystem = {
         type: "file",
         name: "Java",
         icon: "☕",
-        level: "Advanced",
-        years: 4,
-        projects: 12,
+        level: "Intermediate",
+        years: 2,
+        projects: 6,
       },
       "python.skill": {
         type: "file",
         name: "Python",
         icon: "🐍",
-        level: "Advanced",
-        years: 3,
-        projects: 8,
+        level: "Intermediate",
+        years: 2,
+        projects: 5,
       },
       "cpp.skill": {
         type: "file",
@@ -61,16 +61,16 @@ const skillsFileSystem: FileSystem = {
         name: "JavaScript (ES6+)",
         icon: "🟨",
         level: "Advanced",
-        years: 3,
-        projects: 15,
+        years: 5,
+        projects: 9,
       },
       "typescript.skill": {
         type: "file",
         name: "TypeScript",
         icon: "🔷",
-        level: "Advanced",
+        level: "Intermediate",
         years: 2,
-        projects: 10,
+        projects: 6,
       },
       "shell.skill": {
         type: "file",
@@ -93,56 +93,64 @@ const skillsFileSystem: FileSystem = {
         name: "React.js",
         icon: "⚛️",
         level: "Advanced",
-        years: 2,
-        projects: 12,
+        years: 3,
+        projects: 10,
       },
       "nextjs.skill": {
         type: "file",
         name: "Next.js",
-        icon: "▲",
+        icon: "🚀",
         level: "Advanced",
         years: 1,
         projects: 8,
-      },
-      "tailwind.skill": {
-        type: "file",
-        name: "Tailwind CSS",
-        icon: "🎨",
-        level: "Advanced",
-        years: 2,
-        projects: 9,
       },
       "nodejs.skill": {
         type: "file",
         name: "Node.js",
         icon: "🟢",
-        level: "Intermediate",
-        years: 2,
-        projects: 7,
+        level: "Advanced",
+        years: 4,
+        projects: 9,
       },
       "express.skill": {
         type: "file",
         name: "Express.js",
         icon: "🚂",
         level: "Intermediate",
-        years: 2,
+        years: 3,
         projects: 5,
       },
-      "flask.skill": {
+      "tailwind.skill": {
         type: "file",
-        name: "Flask",
-        icon: "🌶️",
+        name: "Tailwind CSS",
+        icon: "🎨",
         level: "Intermediate",
-        years: 1,
-        projects: 4,
+        years: 2,
+        projects: 6,
       },
       "spring.skill": {
         type: "file",
         name: "Spring Boot",
         icon: "🍃",
         level: "Intermediate",
-        years: 1,
+        years: 2,
         projects: 6,
+      },
+      "flask.skill": {
+        type: "file",
+        name: "Flask",
+        icon: "🌶️",
+        level: "Beginner",
+        years: 1,
+        projects: 3,
+      },
+      "payload-cms.skill": {
+        type: "file",
+        name: "Payload CMS",
+        icon: "📝",
+        level: "Intermediate",
+        years: 1,
+        projects: 5,
       },
     },
   },
@@ -158,7 +166,7 @@ const skillsFileSystem: FileSystem = {
         icon: "🐘",
         level: "Intermediate",
         years: 2,
-        projects: 7,
+        projects: 6,
       },
       "mysql.skill": {
         type: "file",
@@ -172,145 +180,60 @@ const skillsFileSystem: FileSystem = {
         type: "file",
         name: "MongoDB",
         icon: "🍃",
-        level: "Beginner",
-        years: 1,
-        projects: 3,
+        level: "Advanced",
+        years: 4,
+        projects: 8,
       },
       "firebase.skill": {
         type: "file",
         name: "Firebase",
         icon: "🔥",
-        level: "Intermediate",
-        years: 1,
-        projects: 4,
-      },
-    },
-  },
-  devops: {
-    type: "folder",
-    name: "devops",
-    icon: "📁",
-    color: "lavender",
-    children: {
-      "docker.skill": {
-        type: "file",
-        name: "Docker",
-        icon: "🐳",
-        level: "Intermediate",
-        years: 2,
-        projects: 8,
-      },
-      "docker-compose.skill": {
-        type: "file",
-        name: "Docker Compose",
-        icon: "🐙",
-        level: "Intermediate",
-        years: 2,
-        projects: 5,
-      },
-      "git.skill": {
-        type: "file",
-        name: "Git",
-        icon: "📦",
-        level: "Advanced",
-        years: 4,
-        projects: 20,
-      },
-      "github-actions.skill": {
-        type: "file",
-        name: "GitHub Actions",
-        icon: "⚙️",
-        level: "Intermediate",
-        years: 1,
-        projects: 4,
-      },
-      "vercel.skill": {
-        type: "file",
-        name: "Vercel",
-        icon: "△",
-        level: "Intermediate",
-        years: 1,
-        projects: 3,
-      },
-      "tailscale.skill": {
-        type: "file",
-        name: "Tailscale",
-        icon: "🔒",
         level: "Beginner",
         years: 1,
         projects: 2,
       },
     },
   },
-  "linux-systems": {
+  "ai-ml-ds": {
     type: "folder",
-    name: "linux-systems",
+    name: "ai-ml-ds",
     icon: "📁",
-    color: "red",
+    color: "orange",
     children: {
-      "arch-linux.skill": {
+      "pandas.skill": {
         type: "file",
-        name: "Arch Linux (Hyprland)",
-        icon: "🐧",
-        level: "Advanced",
-        years: 3,
-        projects: 15,
-      },
-      "debian.skill": {
-        type: "file",
-        name: "Debian Server",
-        icon: "🌪️",
-        level: "Intermediate",
-        years: 2,
-        projects: 8,
-      },
-      "btrfs.skill": {
-        type: "file",
-        name: "Btrfs",
-        icon: "🗂️",
+        name: "Pandas",
+        icon: "🐼",
         level: "Intermediate",
         years: 1,
-        projects: 4,
       },
-      "systemd.skill": {
+      "numpy.skill": {
         type: "file",
-        name: "Systemd",
-        icon: "⚙️",
+        name: "NumPy",
+        icon: "🔢",
         level: "Intermediate",
-        years: 2,
-        projects: 6,
-      },
-      "samba.skill": {
-        type: "file",
-        name: "Samba",
-        icon: "📂",
-        level: "Beginner",
         years: 1,
-        projects: 2,
       },
-      "ssh.skill": {
+      "scikit.skill": {
         type: "file",
-        name: "SSH",
-        icon: "🔐",
-        level: "Advanced",
-        years: 3,
-        projects: 10,
-      },
-      "cron.skill": {
-        type: "file",
-        name: "cron",
-        icon: "⏰",
+        name: "Scikit-learn",
+        icon: "📊",
         level: "Intermediate",
-        years: 2,
-        projects: 3,
+        years: 1,
       },
-      "self-hosted.skill": {
+      "tensorflow.skill": {
         type: "file",
-        name: "Self-hosted apps",
-        icon: "🏠",
+        name: "TensorFlow",
+        icon: "🧠",
         level: "Intermediate",
-        years: 2,
-        projects: 7,
+        years: 1,
+      },
+      "matplotlib.skill": {
+        type: "file",
+        name: "Matplotlib/Seaborn",
+        icon: "📈",
+        level: "Intermediate",
+        years: 1,
       },
     },
   },
@@ -326,7 +249,6 @@ const skillsFileSystem: FileSystem = {
         icon: "🕵️",
         level: "Intermediate",
         years: 1,
-        projects: 4,
       },
       "crystals-dilithium.skill": {
         type: "file",
@@ -334,7 +256,6 @@ const skillsFileSystem: FileSystem = {
         icon: "💎",
         level: "Beginner",
         years: 1,
-        projects: 2,
       },
       "zkp.skill": {
         type: "file",
@@ -342,7 +263,6 @@ const skillsFileSystem: FileSystem = {
         icon: "🔮",
         level: "Beginner",
         years: 1,
-        projects: 1,
       },
       "pq-crypto.skill": {
         type: "file",
@@ -350,47 +270,128 @@ const skillsFileSystem: FileSystem = {
         icon: "🚀",
         level: "Beginner",
         years: 1,
-        projects: 2,
       },
     },
   },
-  interests: {
+  devops: {
     type: "folder",
-    name: "interests",
+    name: "devops",
+    icon: "📁",
+    color: "lavender",
+    children: {
+      "docker.skill": {
+        type: "file",
+        name: "Docker",
+        icon: "🐳",
+        level: "Intermediate",
+        years: 1,
+      },
+      "docker-compose.skill": {
+        type: "file",
+        name: "Docker Compose",
+        icon: "🐙",
+        level: "Intermediate",
+        years: 1,
+      },
+      "git.skill": {
+        type: "file",
+        name: "Git",
+        icon: "📦",
+        level: "Advanced",
+        years: 4,
+      },
+      "github-actions.skill": {
+        type: "file",
+        name: "GitHub Actions",
+        icon: "⚙️",
+        level: "Intermediate",
+        years: 1,
+      },
+      "vercel.skill": {
+        type: "file",
+        name: "Vercel",
+        icon: "△",
+        level: "Intermediate",
+        years: 1,
+      },
+      "tailscale.skill": {
+        type: "file",
+        name: "Tailscale",
+        icon: "🔒",
+        level: "Beginner",
+        years: 1,
+      },
+    },
+  },
+  "linux-systems": {
+    type: "folder",
+    name: "linux-systems",
+    icon: "📁",
+    color: "red",
+    children: {
+      "arch-linux.skill": {
+        type: "file",
+        name: "Arch Linux (Hyprland)",
+        icon: "🐧",
+        level: "Advanced",
+        years: 3,
+      },
+      "debian.skill": {
+        type: "file",
+        name: "Debian Server",
+        icon: "🌪️",
+        level: "Intermediate",
+        years: 1,
+      },
+      "btrfs.skill": {
+        type: "file",
+        name: "Btrfs",
+        icon: "🗂️",
+        level: "Intermediate",
+        years: 1,
+      },
+      "systemd.skill": {
+        type: "file",
+        name: "Systemd",
+        icon: "⚙️",
+        level: "Advanced",
+        years: 3,
+      },
+      "samba.skill": {
+        type: "file",
+        name: "Samba",
+        icon: "📂",
+        level: "Beginner",
+        years: 1,
+      },
+      "ssh.skill": {
+        type: "file",
+        name: "SSH",
+        icon: "🔐",
+        level: "Intermediate",
+        years: 2,
+      },
+      "self-hosted.skill": {
+        type: "file",
+        name: "Self-hosted apps",
+        icon: "🏠",
+        level: "Intermediate",
+        years: 1,
+      },
+    },
+  },
+  "other-interests": {
+    type: "folder",
+    name: "other-interests",
     icon: "📁",
     color: "teal",
     children: {
-      "ssg.skill": {
+      "networks.skill": {
         type: "file",
-        name: "Static Site Generation",
-        icon: "📄",
-        level: "Advanced",
-        years: 2,
-        projects: 8,
-      },
-      "payload-cms.skill": {
-        type: "file",
-        name: "Payload CMS",
-        icon: "📝",
-        level: "Beginner",
-        years: 1,
-        projects: 2,
-      },
-      "custom-cms.skill": {
-        type: "file",
-        name: "Custom CMS Development",
-        icon: "🛠️",
-        level: "Intermediate",
-        years: 1,
-        projects: 4,
-      },
-      "distributed-systems.skill": {
-        type: "file",
-        name: "Distributed Systems",
+        name: "Computer Networks",
         icon: "🌐",
-        level: "Beginner",
-        years: 1,
-        projects: 3,
+        level: "Intermediate",
+        years: 2,
       },
       "dx.skill": {
         type: "file",
@@ -398,7 +399,6 @@ const skillsFileSystem: FileSystem = {
         icon: "✨",
         level: "Intermediate",
         years: 2,
-        projects: 6,
       },
       "dotfiles.skill": {
         type: "file",
@@ -406,7 +406,6 @@ const skillsFileSystem: FileSystem = {
         icon: "🎨",
         level: "Advanced",
         years: 3,
-        projects: 12,
       },
     },
   },
@@ -420,9 +419,8 @@ const skillsFileSystem: FileSystem = {
         type: "file",
         name: "Scrum Master",
         icon: "🏃",
-        level: "Intermediate",
-        years: 1,
-        projects: 4,
+        level: "Beginner",
+        years: 0.5,
       },
       "collaboration.skill": {
         type: "file",
@@ -430,7 +428,6 @@ const skillsFileSystem: FileSystem = {
         icon: "🤝",
         level: "Advanced",
         years: 3,
-        projects: 10,
       },
       "communication.skill": {
         type: "file",
@@ -438,7 +435,6 @@ const skillsFileSystem: FileSystem = {
         icon: "💬",
         level: "Advanced",
         years: 4,
-        projects: 15,
       },
       "debugging.skill": {
         type: "file",
@@ -446,7 +442,6 @@ const skillsFileSystem: FileSystem = {
         icon: "🐛",
         level: "Advanced",
         years: 3,
-        projects: 9,
       },
     },
   },
@@ -463,9 +458,9 @@ Navigate through the folders to explore different skill categories.
 Each .skill file contains detailed information about proficiency and experience.
 
 ## Stats
-- Total Skills: 52
-- Years of Combined Experience: 127+
-- Advanced Level Skills: 15
+- Total Skills: 53
+- Years of Combined Experience: 110+
+- Advanced Level Skills: 10
 - Currently Learning: Post-quantum cryptography, Distributed Systems
 
 ## Last Updated
@@ -700,11 +695,11 @@ export default function SkillsSection() {
                             {item.name}
                           </div>
                           {item.type === "file" &&
-                            "projects" in item &&
-                            item.projects && (
+                            "years" in item &&
+                            item.years && (
                               <div className="text-xs font-mono text-overlay0">
-                                {item.projects} project
-                                {item.projects !== 1 ? "s" : ""}
+                                {item.years} year
+                                {item.years !== 1 ? "s" : ""} experience
                               </div>
                             )}
                         </div>
