@@ -55,27 +55,39 @@ export default function HomeSection() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center bg-base px-6 sm:px-12 lg:px-20 py-16 overflow-x-hidden"
-      style={{ willChange: 'transform' }}
+      className="h-screen flex items-center bg-base px-6 sm:px-12 lg:px-20 py-16 overflow-x-hidden snap-start"
+      style={{ willChange: "transform" }}
     >
       {/* Main Content */}
       <div className="w-full max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-20 items-center">
           {/* Left Column - Main Content */}
-          <motion.div 
+          <motion.div
             className="lg:col-span-3 space-y-12 text-center lg:text-left"
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -20 }}
+            initial={
+              shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -20 }
+            }
             animate={{ opacity: 1, x: 0 }}
-            transition={shouldReduceMotion ? { duration: 0.3 } : { duration: 0.8, ease: "easeOut" }}
-            style={{ transform: 'translateZ(0)' }}
+            transition={
+              shouldReduceMotion
+                ? { duration: 0.3 }
+                : { duration: 0.8, ease: "easeOut" }
+            }
+            style={{ transform: "translateZ(0)" }}
           >
             {/* Name with gradient effect */}
-            <motion.div 
+            <motion.div
               className="space-y-3"
-              initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -30 }}
+              initial={
+                shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -30 }
+              }
               animate={{ opacity: 1, y: 0 }}
-              transition={shouldReduceMotion ? { duration: 0.3, delay: 0.1 } : { duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              style={{ transform: 'translateZ(0)' }}
+              transition={
+                shouldReduceMotion
+                  ? { duration: 0.3, delay: 0.1 }
+                  : { duration: 0.8, delay: 0.2, ease: "easeOut" }
+              }
+              style={{ transform: "translateZ(0)" }}
             >
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold font-mono leading-tight">
                 <span className="bg-gradient-to-r from-mauve via-pink to-red bg-clip-text text-text">
@@ -91,12 +103,18 @@ export default function HomeSection() {
             </motion.div>
 
             {/* Role Typewriter Effect - Hidden on mobile */}
-            <motion.div 
+            <motion.div
               className="hidden sm:block text-xl lg:text-2xl font-mono"
-              initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -20 }}
+              initial={
+                shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -20 }
+              }
               animate={{ opacity: 1, x: 0 }}
-              transition={shouldReduceMotion ? { duration: 0.3, delay: 0.2 } : { duration: 0.6, delay: 0.4, ease: "easeOut" }}
-              style={{ transform: 'translateZ(0)' }}
+              transition={
+                shouldReduceMotion
+                  ? { duration: 0.3, delay: 0.2 }
+                  : { duration: 0.6, delay: 0.4, ease: "easeOut" }
+              }
+              style={{ transform: "translateZ(0)" }}
             >
               <span className="text-overlay0">~/octagone %</span>{" "}
               <span className="text-yellow">{roleText}</span>
@@ -104,12 +122,18 @@ export default function HomeSection() {
             </motion.div>
 
             {/* Social Section */}
-            <motion.div 
+            <motion.div
               className="space-y-6"
-              initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+              initial={
+                shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }
+              }
               animate={{ opacity: 1, y: 0 }}
-              transition={shouldReduceMotion ? { duration: 0.3, delay: 0.3 } : { duration: 0.6, delay: 0.6, ease: "easeOut" }}
-              style={{ transform: 'translateZ(0)' }}
+              transition={
+                shouldReduceMotion
+                  ? { duration: 0.3, delay: 0.3 }
+                  : { duration: 0.6, delay: 0.6, ease: "easeOut" }
+              }
+              style={{ transform: "translateZ(0)" }}
             >
               <h3 className="text-xl sm:text-2xl font-bold font-mono text-subtext-0 text-center lg:text-left">
                 Let&apos;s connect
@@ -120,16 +144,34 @@ export default function HomeSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group bg-surface0 hover:bg-mauve text-text hover:text-crust px-6 py-3 rounded-lg font-mono text-[1rem] transition-colors duration-200 flex items-center space-x-2 hover:shadow-lg hover:shadow-mauve/20"
-                  initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+                  initial={
+                    shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }
+                  }
                   animate={{ opacity: 1, y: 0 }}
-                  transition={shouldReduceMotion ? { duration: 0.3, delay: 0.4 } : { 
-                    opacity: { duration: 0.5, delay: 0.8, ease: "easeOut" },
-                    y: { duration: 0.5, delay: 0.8, ease: "easeOut" },
-                    scale: { duration: 0.15 }
-                  }}
-                  whileHover={shouldReduceMotion ? {} : { scale: 1.1, y: -4, transition: { duration: 0.15 } }}
-                  whileTap={shouldReduceMotion ? {} : { scale: 0.95, y: 0, transition: { duration: 0.1 } }}
-                  style={{ transform: 'translateZ(0)' }}
+                  transition={
+                    shouldReduceMotion
+                      ? { duration: 0.3, delay: 0.4 }
+                      : {
+                          opacity: {
+                            duration: 0.5,
+                            delay: 0.8,
+                            ease: "easeOut",
+                          },
+                          y: { duration: 0.5, delay: 0.8, ease: "easeOut" },
+                          scale: { duration: 0.15 },
+                        }
+                  }
+                  whileHover={
+                    shouldReduceMotion
+                      ? {}
+                      : { scale: 1.1, y: -4, transition: { duration: 0.15 } }
+                  }
+                  whileTap={
+                    shouldReduceMotion
+                      ? {}
+                      : { scale: 0.95, y: 0, transition: { duration: 0.1 } }
+                  }
+                  style={{ transform: "translateZ(0)" }}
                 >
                   <svg
                     className="w-5 h-5 group-hover:rotate-[360deg] group-hover:scale-125 transition-all duration-500 ease-out"
@@ -147,16 +189,34 @@ export default function HomeSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group bg-surface0 hover:bg-blue text-text hover:text-crust px-6 py-3 rounded-lg font-mono text-1rem transition-colors duration-200 flex items-center space-x-2 hover:shadow-lg hover:shadow-blue/20"
-                  initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+                  initial={
+                    shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }
+                  }
                   animate={{ opacity: 1, y: 0 }}
-                  transition={shouldReduceMotion ? { duration: 0.3, delay: 0.45 } : { 
-                    opacity: { duration: 0.5, delay: 0.9, ease: "easeOut" },
-                    y: { duration: 0.5, delay: 0.9, ease: "easeOut" },
-                    scale: { duration: 0.15 }
-                  }}
-                  whileHover={shouldReduceMotion ? {} : { scale: 1.1, y: -4, transition: { duration: 0.15 } }}
-                  whileTap={shouldReduceMotion ? {} : { scale: 0.95, y: 0, transition: { duration: 0.1 } }}
-                  style={{ transform: 'translateZ(0)' }}
+                  transition={
+                    shouldReduceMotion
+                      ? { duration: 0.3, delay: 0.45 }
+                      : {
+                          opacity: {
+                            duration: 0.5,
+                            delay: 0.9,
+                            ease: "easeOut",
+                          },
+                          y: { duration: 0.5, delay: 0.9, ease: "easeOut" },
+                          scale: { duration: 0.15 },
+                        }
+                  }
+                  whileHover={
+                    shouldReduceMotion
+                      ? {}
+                      : { scale: 1.1, y: -4, transition: { duration: 0.15 } }
+                  }
+                  whileTap={
+                    shouldReduceMotion
+                      ? {}
+                      : { scale: 0.95, y: 0, transition: { duration: 0.1 } }
+                  }
+                  style={{ transform: "translateZ(0)" }}
                 >
                   <svg
                     className="w-5 h-5 group-hover:rotate-[360deg] group-hover:scale-125 transition-all duration-500 ease-out"
@@ -174,20 +234,32 @@ export default function HomeSection() {
           </motion.div>
 
           {/* Right Column - Bio */}
-          <motion.div 
+          <motion.div
             className="lg:col-span-2 space-y-8 text-center lg:text-left"
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: 20 }}
+            initial={
+              shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: 20 }
+            }
             animate={{ opacity: 1, x: 0 }}
-            transition={shouldReduceMotion ? { duration: 0.3, delay: 0.15 } : { duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            style={{ transform: 'translateZ(0)' }}
+            transition={
+              shouldReduceMotion
+                ? { duration: 0.3, delay: 0.15 }
+                : { duration: 0.8, delay: 0.3, ease: "easeOut" }
+            }
+            style={{ transform: "translateZ(0)" }}
           >
             <div className="space-y-6">
-              <motion.p 
+              <motion.p
                 className="text-lg sm:text-xl text-subtext1 leading-relaxed"
-                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+                initial={
+                  shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }
+                }
                 animate={{ opacity: 1, y: 0 }}
-                transition={shouldReduceMotion ? { duration: 0.3, delay: 0.25 } : { duration: 0.6, delay: 0.5, ease: "easeOut" }}
-                style={{ transform: 'translateZ(0)' }}
+                transition={
+                  shouldReduceMotion
+                    ? { duration: 0.3, delay: 0.25 }
+                    : { duration: 0.6, delay: 0.5, ease: "easeOut" }
+                }
+                style={{ transform: "translateZ(0)" }}
               >
                 I love building{" "}
                 <span className="text-maroon font-semibold">
@@ -206,12 +278,18 @@ export default function HomeSection() {
                 .
               </motion.p>
 
-              <motion.p 
+              <motion.p
                 className="text-lg sm:text-xl text-subtext1 leading-relaxed"
-                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+                initial={
+                  shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }
+                }
                 animate={{ opacity: 1, y: 0 }}
-                transition={shouldReduceMotion ? { duration: 0.3, delay: 0.35 } : { duration: 0.6, delay: 0.7, ease: "easeOut" }}
-                style={{ transform: 'translateZ(0)' }}
+                transition={
+                  shouldReduceMotion
+                    ? { duration: 0.3, delay: 0.35 }
+                    : { duration: 0.6, delay: 0.7, ease: "easeOut" }
+                }
+                style={{ transform: "translateZ(0)" }}
               >
                 Right now, I&apos;m focused on learning, tinkering, and
                 <span className="text-yellow font-semibold">
@@ -221,12 +299,18 @@ export default function HomeSection() {
                 .
               </motion.p>
 
-              <motion.p 
+              <motion.p
                 className="text-lg sm:text-xl text-subtext1 leading-relaxed"
-                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+                initial={
+                  shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }
+                }
                 animate={{ opacity: 1, y: 0 }}
-                transition={shouldReduceMotion ? { duration: 0.3, delay: 0.45 } : { duration: 0.6, delay: 0.9, ease: "easeOut" }}
-                style={{ transform: 'translateZ(0)' }}
+                transition={
+                  shouldReduceMotion
+                    ? { duration: 0.3, delay: 0.45 }
+                    : { duration: 0.6, delay: 0.9, ease: "easeOut" }
+                }
+                style={{ transform: "translateZ(0)" }}
               >
                 When I&apos;m not building or breaking stuff, I&apos;m probably
                 <span className="text-blue font-semibold">

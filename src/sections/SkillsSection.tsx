@@ -541,7 +541,7 @@ export default function SkillsSection() {
   return (
     <section
       id="skills"
-      className="h-screen bg-base px-4 sm:px-6 lg:px-8 py-8 pb-26 pt-12 overflow-hidden"
+      className="h-screen bg-base px-4 sm:px-6 lg:px-8 py-8 pb-26 pt-12 overflow-hidden snap-start"
     >
       <div className="w-full max-w-7xl mx-auto h-full">
         <motion.div
@@ -627,7 +627,7 @@ export default function SkillsSection() {
               {/* File Explorer Content */}
               <div className="flex flex-1 min-h-0">
                 {/* File List */}
-                <div className="flex-1 p-4 sm:p-6 overflow-y-auto">
+                <div className="flex-1 p-4 sm:p-6 overflow-y-auto no-scroll-snap">
                   {/* Breadcrumb Navigation */}
                   <div className="flex items-center gap-1 sm:gap-2 mb-4 sm:mb-4 text-sm sm:text-lg font-mono overflow-x-auto">
                     <button
@@ -740,7 +740,7 @@ export default function SkillsSection() {
                           : { opacity: 0, x: 20 }
                       }
                       transition={{ duration: shouldReduceMotion ? 0.2 : 0.3 }}
-                      className="hidden lg:block lg:w-80 border-l border-surface2 p-4 sm:p-6 bg-surface0 overflow-y-auto"
+                      className="hidden lg:block lg:w-80 border-l border-surface2 p-4 sm:p-6 bg-surface0 overflow-y-auto no-scroll-snap"
                     >
                       <div className="space-y-4">
                         <div className="flex items-center gap-3">
@@ -751,7 +751,7 @@ export default function SkillsSection() {
                         </div>
 
                         {"content" in selectedItem && selectedItem.content ? (
-                          <div className="bg-surface1 rounded-lg p-4 max-h-64 overflow-y-auto">
+                          <div className="bg-surface1 rounded-lg p-4 max-h-64 overflow-y-auto no-scroll-snap">
                             <pre className="text-sm font-mono text-subtext1 whitespace-pre-wrap">
                               {selectedItem.content}
                             </pre>
@@ -845,7 +845,7 @@ export default function SkillsSection() {
                       </div>
 
                       {"content" in selectedItem && selectedItem.content ? (
-                        <div className="bg-surface1 rounded-lg p-3 max-h-32 overflow-y-auto">
+                        <div className="bg-surface1 rounded-lg p-3 max-h-32 overflow-y-auto no-scroll-snap">
                           <pre className="text-sm font-mono text-subtext1 whitespace-pre-wrap">
                             {selectedItem.content}
                           </pre>

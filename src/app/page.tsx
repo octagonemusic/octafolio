@@ -8,7 +8,7 @@ import {
 
 export default function Home() {
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="h-screen overflow-x-hidden overflow-y-auto snap-y snap-mandatory">
       <HomeSection />
       <AboutSection />
       <SkillsSection />
