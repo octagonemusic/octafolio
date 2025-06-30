@@ -541,7 +541,7 @@ export default function SkillsSection() {
   return (
     <section
       id="skills"
-      className="h-screen bg-base px-4 sm:px-6 lg:px-8 py-8 pb-26 pt-12 overflow-hidden snap-start"
+      className="h-screen bg-base px-4 sm:px-6 lg:px-8 py-8 pb-55 sm:pb-26 pt-12 overflow-hidden snap-start"
     >
       <div className="w-full max-w-7xl mx-auto h-full">
         <motion.div
