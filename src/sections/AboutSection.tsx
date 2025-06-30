@@ -257,7 +257,7 @@ export default function AboutSection() {
       >
         <div className="text-center mb-6">
           <motion.h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold font-mono text-text mb-4"
+            className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-mono text-text mb-4"
             initial={
               shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.95 }
             }
@@ -272,7 +272,7 @@ export default function AboutSection() {
             About Me
           </motion.h2>
           <motion.div
-            className="text-xl sm:text-2xl font-mono text-overlay0"
+            className="text-sm xs:text-lg sm:text-xl lg:text-2xl font-mono text-overlay0"
             initial={
               shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }
             }
@@ -322,7 +322,7 @@ export default function AboutSection() {
               <div className="w-3 h-3 rounded-full bg-yellow"></div>
               <div className="w-3 h-3 rounded-full bg-green"></div>
             </div>
-            <span className="text-subtext0 font-mono text-sm ml-4">
+            <span className="text-subtext0 font-mono text-xs xs:text-sm ml-2 sm:ml-4">
               ~/octagone/about
             </span>
           </div>
@@ -333,7 +333,7 @@ export default function AboutSection() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-3 py-2 rounded-t text-sm font-mono whitespace-nowrap transition-all duration-200 flex items-center gap-2 cursor-pointer ${
+                className={`px-2 xs:px-3 py-1.5 xs:py-2 rounded-t text-xs xs:text-sm font-mono whitespace-nowrap transition-all duration-200 flex items-center gap-1 xs:gap-2 cursor-pointer ${
                   activeTab === tab.id
                     ? "bg-mantle text-text border-b-2 border-blue"
                     : "bg-surface1 text-subtext0 hover:text-text hover:bg-surface2"
@@ -347,7 +347,7 @@ export default function AboutSection() {
         </div>
 
         {/* Terminal Content */}
-        <div className="flex-1 bg-surface0 rounded-b-lg border-2 border-blue border-t-0 p-6 overflow-hidden">
+        <div className="flex-1 bg-surface0 rounded-b-lg border-2 border-blue border-t-0 p-3 xs:p-4 sm:p-6 overflow-hidden">
           <div
             className="h-full overflow-y-auto custom-scrollbar no-scroll-snap"
             style={{ scrollBehavior: "smooth" }}
@@ -378,7 +378,7 @@ export default function AboutSection() {
                 }
               }}
             >
-              <p className="text-lg text-text leading-relaxed">
+              <p className="text-sm xs:text-lg text-text leading-relaxed">
                 {renderHighlightedContent(
                   aboutTabs.find((tab) => tab.id === activeTab)?.content
                     .para1 || "",
@@ -386,7 +386,7 @@ export default function AboutSection() {
                 )}
               </p>
 
-              <p className="text-lg text-text leading-relaxed">
+              <p className="text-sm xs:text-lg text-text leading-relaxed">
                 {renderHighlightedContent(
                   aboutTabs.find((tab) => tab.id === activeTab)?.content
                     .para2 || "",
@@ -399,7 +399,7 @@ export default function AboutSection() {
 
               {/* Terminal Status Bar - Always at bottom */}
               <div className="mt-auto pt-4 border-t border-overlay0">
-                <div className="font-mono text-base space-y-1">
+                <div className="font-mono text-xs xs:text-sm sm:text-base space-y-1">
                   <div className="flex items-center gap-2">
                     <span className="text-overlay1">~/octagone %</span>
                     <span className="text-text">{displayedCommand}</span>

@@ -55,15 +55,15 @@ export default function HomeSection() {
   return (
     <section
       id="home"
-      className="h-screen flex items-center bg-base px-6 sm:px-12 lg:px-20 py-16 overflow-x-hidden snap-start"
+      className="min-h-screen h-screen flex items-start justify-center bg-base px-4 sm:px-6 lg:px-12 xl:px-20 pt-8 sm:pt-16 lg:pt-0 overflow-x-hidden overflow-y-auto snap-start"
       style={{ willChange: "transform" }}
     >
       {/* Main Content */}
-      <div className="w-full max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-20 items-center">
+      <div className="w-full max-w-7xl mx-auto lg:flex lg:items-center lg:min-h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-20 items-center w-full">
           {/* Left Column - Main Content */}
           <motion.div
-            className="lg:col-span-3 space-y-12 text-center lg:text-left"
+            className="lg:col-span-3 space-y-6 sm:space-y-8 lg:space-y-12 text-center lg:text-left"
             initial={
               shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -20 }
             }
@@ -77,7 +77,7 @@ export default function HomeSection() {
           >
             {/* Name with gradient effect */}
             <motion.div
-              className="space-y-3"
+              className="space-y-2 sm:space-y-3"
               initial={
                 shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -30 }
               }
@@ -89,22 +89,22 @@ export default function HomeSection() {
               }
               style={{ transform: "translateZ(0)" }}
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold font-mono leading-tight">
+              <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-mono leading-tight">
                 <span className="bg-gradient-to-r from-mauve via-pink to-red bg-clip-text text-text">
                   Bhargav Prasad
                 </span>
               </h1>
               {/* Tagline with colors */}
-              <p className="text-xl sm:text-2xl lg:text-3xl font-mono">
+              <p className="text-xs xs:text-sm sm:text-lg md:text-xl lg:text-2xl font-mono">
                 <span className="text-pink">CS Student</span>
-                <span className="text-subtext0 mx-3">·</span>
+                <span className="text-subtext0 mx-2 sm:mx-3">·</span>
                 <span className="text-blue">Amrita Vishwa Vidyapeetham</span>
               </p>
             </motion.div>
 
             {/* Role Typewriter Effect - Hidden on mobile */}
             <motion.div
-              className="hidden sm:block text-xl lg:text-2xl font-mono"
+              className="hidden sm:block text-sm sm:text-lg lg:text-xl xl:text-2xl font-mono"
               initial={
                 shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -20 }
               }
@@ -123,7 +123,7 @@ export default function HomeSection() {
 
             {/* Social Section */}
             <motion.div
-              className="space-y-6"
+              className="space-y-4 sm:space-y-6"
               initial={
                 shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }
               }
@@ -135,10 +135,10 @@ export default function HomeSection() {
               }
               style={{ transform: "translateZ(0)" }}
             >
-              <h3 className="text-xl sm:text-2xl font-bold font-mono text-subtext-0 text-center lg:text-left">
+              <h3 className="text-sm xs:text-lg sm:text-xl md:text-2xl font-bold font-mono text-subtext-0 text-center lg:text-left">
                 Let&apos;s connect
               </h3>
-              <div className="flex justify-center lg:justify-start space-x-6">
+              <div className="flex justify-center lg:justify-start space-x-3 sm:space-x-4 lg:space-x-6">
                 <motion.a
                   href="https://github.com/octagonemusic"
                   target="_blank"
@@ -235,7 +235,7 @@ export default function HomeSection() {
 
           {/* Right Column - Bio */}
           <motion.div
-            className="lg:col-span-2 space-y-8 text-center lg:text-left"
+            className="lg:col-span-2 space-y-4 sm:space-y-6 lg:space-y-8 text-center lg:text-left"
             initial={
               shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: 20 }
             }
@@ -247,9 +247,9 @@ export default function HomeSection() {
             }
             style={{ transform: "translateZ(0)" }}
           >
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <motion.p
-                className="text-lg sm:text-xl text-subtext1 leading-relaxed"
+                className="text-sm sm:text-lg md:text-xl text-subtext1 leading-relaxed"
                 initial={
                   shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }
                 }
@@ -279,7 +279,7 @@ export default function HomeSection() {
               </motion.p>
 
               <motion.p
-                className="text-lg sm:text-xl text-subtext1 leading-relaxed"
+                className="text-sm sm:text-lg md:text-xl text-subtext1 leading-relaxed"
                 initial={
                   shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }
                 }
@@ -300,7 +300,7 @@ export default function HomeSection() {
               </motion.p>
 
               <motion.p
-                className="text-lg sm:text-xl text-subtext1 leading-relaxed"
+                className="text-sm sm:text-lg md:text-xl text-subtext1 leading-relaxed"
                 initial={
                   shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }
                 }

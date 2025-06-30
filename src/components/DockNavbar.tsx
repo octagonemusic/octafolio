@@ -91,11 +91,11 @@ export default function DockNavbar() {
 
   return (
     <nav
-      className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-md sm:w-auto sm:max-w-none"
+      className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 w-[98%] sm:w-[95%] lg:w-auto max-w-none"
       style={{ willChange: "transform" }}
     >
       <motion.div
-        className="flex items-center justify-center gap-1 sm:gap-2 px-2 xs:px-3 sm:px-4 py-2.5 xs:py-3 bg-surface0/80 backdrop-blur-md border-blue border-2 rounded-xl shadow-lg overflow-hidden"
+        className="flex items-center justify-center gap-0.5 xs:gap-1 sm:gap-2 px-1.5 xs:px-2 sm:px-3 lg:px-4 py-2 xs:py-2.5 sm:py-3 bg-surface0/80 backdrop-blur-md border-blue border-2 rounded-xl shadow-lg overflow-x-auto overflow-y-hidden"
         initial={shouldReduceMotion ? { opacity: 0 } : { y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={
@@ -116,7 +116,7 @@ export default function DockNavbar() {
             key={item.id}
             onClick={() => scrollToSection(item.id)}
             className={`
-              relative px-2 sm:px-4 py-1 rounded-lg
+              relative px-1.5 xs:px-2 sm:px-3 lg:px-4 py-1 rounded-lg
               transition-all duration-250 ease-out
               flex-shrink-0 min-w-0 cursor-pointer
               ${
@@ -127,7 +127,7 @@ export default function DockNavbar() {
             `}
             style={{ transform: "translateZ(0)" }}
           >
-            <span className="font-bold text-sm sm:text-[1rem] whitespace-nowrap overflow-hidden text-ellipsis">
+            <span className="font-bold text-xs xs:text-sm sm:text-[1rem] whitespace-nowrap overflow-hidden text-ellipsis">
               {item.label}
             </span>
           </motion.button>
