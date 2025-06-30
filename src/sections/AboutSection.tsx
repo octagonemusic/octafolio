@@ -402,7 +402,7 @@ export default function AboutSection() {
                 <div className="font-mono text-base space-y-1">
                   <div className="flex items-center gap-2">
                     <span className="text-overlay1">~/octagone %</span>
-                    <span className="text-subtext0">{displayedCommand}</span>
+                    <span className="text-text">{displayedCommand}</span>
                     <motion.span
                       className="text-mauve"
                       animate={{ opacity: [1, 0] }}
