@@ -89,13 +89,13 @@ export default function HomeSection() {
               }
               style={{ transform: "translateZ(0)" }}
             >
-              <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-mono leading-tight">
+              <h1 className="text-4xl sm:text-6xl font-bold font-mono leading-tight">
                 <span className="bg-gradient-to-r from-mauve via-pink to-red bg-clip-text text-text">
                   Bhargav Prasad
                 </span>
               </h1>
               {/* Tagline with colors */}
-              <p className="text-xs xs:text-sm sm:text-lg md:text-xl lg:text-2xl font-mono">
+              <p className="text-xl sm:text-2xl font-mono">
                 <span className="text-pink">CS Student</span>
                 <span className="text-subtext0 mx-2 sm:mx-3">·</span>
                 <span className="text-blue">Amrita Vishwa Vidyapeetham</span>
@@ -104,7 +104,7 @@ export default function HomeSection() {
 
             {/* Role Typewriter Effect - Hidden on mobile */}
             <motion.div
-              className="hidden sm:block text-sm sm:text-lg lg:text-xl xl:text-2xl font-mono"
+              className="text-sm sm:text-lg lg:text-xl xl:text-2xl font-mono"
               initial={
                 shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -20 }
               }
@@ -123,7 +123,7 @@ export default function HomeSection() {
 
             {/* Social Section */}
             <motion.div
-              className="space-y-4 sm:space-y-6"
+              className="pt-4 sm:pt-0 pb-4 sm:pb-0 space-y-4 sm:space-y-6"
               initial={
                 shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }
               }

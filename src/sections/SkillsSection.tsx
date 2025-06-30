@@ -541,360 +541,374 @@ export default function SkillsSection() {
   return (
     <section
       id="skills"
-      className="h-screen bg-base px-4 sm:px-6 lg:px-8 py-8 pb-55 sm:pb-26 pt-12 overflow-hidden snap-start"
+      className="h-screen flex flex-col bg-mantle px-6 sm:px-12 lg:px-20 snap-start"
+      style={{ willChange: "transform" }}
     >
-      <div className="w-full max-w-7xl mx-auto h-full">
-        <motion.div
-          initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={
-            shouldReduceMotion
-              ? { duration: 0.3 }
-              : { duration: 0.8, ease: "easeOut" }
-          }
-          className="h-full flex flex-col"
-        >
-          {/* Header */}
-          <div className="text-center space-y-2 flex-shrink-0 mb-4">
-            <motion.h2
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold font-mono text-text mb-4"
-              initial={
-                shouldReduceMotion
-                  ? { opacity: 0 }
-                  : { opacity: 0, scale: 0.95 }
-              }
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={
-                shouldReduceMotion
-                  ? { duration: 0.3, delay: 0.3 }
-                  : { duration: 0.5, delay: 0.4, ease: "easeOut" }
-              }
+      {/* Header */}
+      <motion.div
+        className="flex-shrink-0 pt-8 pb-6"
+        initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={
+          shouldReduceMotion
+            ? { duration: 0.3, delay: 0.1 }
+            : { duration: 0.6, delay: 0.2, ease: "easeOut" }
+        }
+        style={{ transform: "translateZ(0)" }}
+      >
+        <div className="text-center mb-6">
+          <motion.h2
+            className="text-4xl sm:text-6xl font-bold font-mono text-text mb-4"
+            initial={
+              shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.95 }
+            }
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={
+              shouldReduceMotion
+                ? { duration: 0.3, delay: 0.3 }
+                : { duration: 0.5, delay: 0.4, ease: "easeOut" }
+            }
+          >
+            Skills Explorer
+          </motion.h2>
+          <motion.div
+            className="text-sm xs:text-lg sm:text-xl lg:text-2xl font-mono text-overlay0"
+            initial={
+              shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }
+            }
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={
+              shouldReduceMotion
+                ? { duration: 0.3, delay: 0.5 }
+                : { duration: 0.4, delay: 0.6, ease: "easeOut" }
+            }
+          >
+            <span className="text-overlay0">~/octagone % </span>
+            <span className="text-yellow">{terminalText}</span>
+            <motion.span
+              className="text-mauve"
+              animate={{ opacity: [1, 0] }}
+              transition={{
+                duration: 0.8,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
             >
-              Skills Explorer
-            </motion.h2>
-            <motion.div
-              className="text-xl sm:text-2xl font-mono text-overlay0 mb-4"
-              initial={
-                shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }
-              }
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={
-                shouldReduceMotion
-                  ? { duration: 0.3, delay: 0.5 }
-                  : { duration: 0.4, delay: 0.6, ease: "easeOut" }
-              }
-            >
-              <span className="text-overlay0">~/octagone % </span>
-              <span className="text-yellow">{terminalText}</span>
-              <motion.span
-                className="text-mauve"
-                animate={{ opacity: [1, 0] }}
-                transition={{
-                  duration: 0.8,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                }}
-              >
-                |
-              </motion.span>
-            </motion.div>
-          </div>
+              |
+            </motion.span>
+          </motion.div>
+        </div>
+      </motion.div>
 
-          {showTerminal && (
-            <motion.div
-              initial={
-                shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }
-              }
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: shouldReduceMotion ? 0.2 : 0.5 }}
-              className="bg-surface0 rounded-xl overflow-hidden flex-1 flex flex-col min-h-0"
-            >
-              {/* Terminal Header */}
-              <div className="bg-surface1 px-4 py-3 flex items-center gap-2 flex-shrink-0">
+      {/* Terminal Window */}
+      <motion.div
+        className="flex-1 flex flex-col max-w-6xl mx-auto w-full pb-45 sm:pb-24 min-h-0"
+        initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={
+          shouldReduceMotion
+            ? { duration: 0.3, delay: 0.8 }
+            : { duration: 0.8, delay: 1.0, ease: "easeOut" }
+        }
+        style={{ transform: "translateZ(0)" }}
+      >
+        {showTerminal && (
+          <motion.div
+            initial={
+              shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }
+            }
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: shouldReduceMotion ? 0.2 : 0.5 }}
+            className="bg-surface0 rounded-lg border-2 border-blue overflow-hidden flex-1 flex flex-col min-h-0"
+          >
+            {/* Terminal Header */}
+            <div className="bg-surface0 p-4 flex-shrink-0">
+              <div className="flex items-center gap-2">
                 <div className="flex gap-2">
-                  <div className="w-3 h-3 bg-red rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow rounded-full"></div>
-                  <div className="w-3 h-3 bg-green rounded-full"></div>
+                  <div className="w-3 h-3 rounded-full bg-red"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow"></div>
+                  <div className="w-3 h-3 rounded-full bg-green"></div>
                 </div>
-                <div className="font-mono text-xs sm:text-sm text-overlay0 ml-4 truncate">
+                <span className="text-subtext0 font-mono text-xs xs:text-sm ml-2 sm:ml-4">
                   Skills Explorer - {breadcrumb}
+                </span>
+              </div>
+            </div>
+
+            {/* File Explorer Content */}
+            <div className="flex flex-1 min-h-0 bg-surface0 border-t-0 overflow-hidden">
+              {/* File List */}
+              <div className="flex-1 p-4 sm:p-6 overflow-y-auto no-scroll-snap">
+                {/* Breadcrumb Navigation */}
+                <div className="flex items-center gap-1 sm:gap-2 mb-4 sm:mb-4 text-sm sm:text-lg font-mono overflow-x-auto">
+                  <button
+                    onClick={navigateToRoot}
+                    className="text-mauve hover:text-text transition-colors whitespace-nowrap cursor-pointer"
+                  >
+                    ~/skills
+                  </button>
+                  {currentPath.map((path, index) => (
+                    <span
+                      key={index}
+                      className="flex items-center gap-1 sm:gap-2 whitespace-nowrap"
+                    >
+                      <span className="text-overlay0">/</span>
+                      <button
+                        onClick={() =>
+                          setCurrentPath(currentPath.slice(0, index + 1))
+                        }
+                        className="text-mauve hover:text-text transition-colors cursor-pointer"
+                      >
+                        {path}
+                      </button>
+                    </span>
+                  ))}
+                </div>
+
+                {/* Back Button */}
+                {currentPath.length > 0 && (
+                  <motion.button
+                    onClick={navigateUp}
+                    className="flex items-center gap-2 p-2 hover:bg-surface1 rounded-lg transition-colors mb-2 sm:mb-4 w-full text-left cursor-pointer"
+                    whileHover={shouldReduceMotion ? {} : { x: 4 }}
+                  >
+                    <span className="text-blue">📁</span>
+                    <span className="font-mono text-text text-xs sm:text-sm">
+                      ..
+                    </span>
+                  </motion.button>
+                )}
+
+                {/* File/Folder List */}
+                <div className="space-y-1">
+                  {Object.entries(currentDir).map(([key, item]) => (
+                    <motion.button
+                      key={key}
+                      onClick={() => {
+                        if (item.type === "folder") {
+                          navigateToFolder(key);
+                        } else {
+                          selectItem(item);
+                        }
+                      }}
+                      className={`flex items-center gap-2 sm:gap-3 p-2 sm:p-3 hover:bg-surface1 rounded-lg transition-all duration-200 w-full text-left group cursor-pointer ${
+                        selectedItem === item
+                          ? "bg-surface1 border-l-4 border-mauve"
+                          : ""
+                      }`}
+                      whileHover={shouldReduceMotion ? {} : { x: 2 }}
+                    >
+                      <span className="text-xl sm:text-3xl group-hover:scale-110 transition-transform duration-200 flex-shrink-0">
+                        {item.icon}
+                      </span>
+                      <div className="flex-1 min-w-0">
+                        <div className="font-mono text-text text-sm sm:text-lg group-hover:text-mauve transition-colors truncate">
+                          {item.name}
+                        </div>
+                        {item.type === "file" &&
+                          "years" in item &&
+                          item.years && (
+                            <div className="text-xs font-mono text-overlay0">
+                              {item.years} year
+                              {item.years !== 1 ? "s" : ""} experience
+                            </div>
+                          )}
+                      </div>
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        {item.type === "folder" && (
+                          <div className="text-sm font-mono text-text bg-surface2 px-3 py-1 rounded-full border border-overlay0">
+                            {Object.keys(item.children).length}
+                          </div>
+                        )}
+                        {item.type === "file" &&
+                          "level" in item &&
+                          item.level && (
+                            <div
+                              className={`text-xs font-mono px-2 py-1 rounded ${levelColors[item.level]} bg-opacity-20`}
+                            >
+                              {item.level}
+                            </div>
+                          )}
+                      </div>
+                    </motion.button>
+                  ))}
                 </div>
               </div>
 
-              {/* File Explorer Content */}
-              <div className="flex flex-1 min-h-0">
-                {/* File List */}
-                <div className="flex-1 p-4 sm:p-6 overflow-y-auto no-scroll-snap">
-                  {/* Breadcrumb Navigation */}
-                  <div className="flex items-center gap-1 sm:gap-2 mb-4 sm:mb-4 text-sm sm:text-lg font-mono overflow-x-auto">
-                    <button
-                      onClick={navigateToRoot}
-                      className="text-mauve hover:text-text transition-colors whitespace-nowrap cursor-pointer"
-                    >
-                      ~/skills
-                    </button>
-                    {currentPath.map((path, index) => (
-                      <span
-                        key={index}
-                        className="flex items-center gap-1 sm:gap-2 whitespace-nowrap"
-                      >
-                        <span className="text-overlay0">/</span>
-                        <button
-                          onClick={() =>
-                            setCurrentPath(currentPath.slice(0, index + 1))
-                          }
-                          className="text-mauve hover:text-text transition-colors cursor-pointer"
-                        >
-                          {path}
-                        </button>
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Back Button */}
-                  {currentPath.length > 0 && (
-                    <motion.button
-                      onClick={navigateUp}
-                      className="flex items-center gap-2 p-2 hover:bg-surface1 rounded-lg transition-colors mb-2 sm:mb-4 w-full text-left cursor-pointer"
-                      whileHover={shouldReduceMotion ? {} : { x: 4 }}
-                    >
-                      <span className="text-blue">📁</span>
-                      <span className="font-mono text-text text-xs sm:text-sm">
-                        ..
-                      </span>
-                    </motion.button>
-                  )}
-
-                  {/* File/Folder List */}
-                  <div className="space-y-1">
-                    {Object.entries(currentDir).map(([key, item]) => (
-                      <motion.button
-                        key={key}
-                        onClick={() => {
-                          if (item.type === "folder") {
-                            navigateToFolder(key);
-                          } else {
-                            selectItem(item);
-                          }
-                        }}
-                        className={`flex items-center gap-2 sm:gap-3 p-2 sm:p-3 hover:bg-surface1 rounded-lg transition-all duration-200 w-full text-left group cursor-pointer ${
-                          selectedItem === item
-                            ? "bg-surface1 border-l-4 border-mauve"
-                            : ""
-                        }`}
-                        whileHover={shouldReduceMotion ? {} : { x: 2 }}
-                      >
-                        <span className="text-xl sm:text-3xl group-hover:scale-110 transition-transform duration-200 flex-shrink-0">
-                          {item.icon}
-                        </span>
-                        <div className="flex-1 min-w-0">
-                          <div className="font-mono text-text text-sm sm:text-lg group-hover:text-mauve transition-colors truncate">
-                            {item.name}
-                          </div>
-                          {item.type === "file" &&
-                            "years" in item &&
-                            item.years && (
-                              <div className="text-xs font-mono text-overlay0">
-                                {item.years} year
-                                {item.years !== 1 ? "s" : ""} experience
-                              </div>
-                            )}
-                        </div>
-                        <div className="flex items-center gap-2 flex-shrink-0">
-                          {item.type === "folder" && (
-                            <div className="text-sm font-mono text-text bg-surface2 px-3 py-1 rounded-full border border-overlay0">
-                              {Object.keys(item.children).length}
-                            </div>
-                          )}
-                          {item.type === "file" &&
-                            "level" in item &&
-                            item.level && (
-                              <div
-                                className={`text-xs font-mono px-2 py-1 rounded ${levelColors[item.level]} bg-opacity-20`}
-                              >
-                                {item.level}
-                              </div>
-                            )}
-                        </div>
-                      </motion.button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* File Preview Panel */}
-                <AnimatePresence>
-                  {selectedItem && (
-                    <motion.div
-                      initial={
-                        shouldReduceMotion
-                          ? { opacity: 0 }
-                          : { opacity: 0, x: 20 }
-                      }
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={
-                        shouldReduceMotion
-                          ? { opacity: 0 }
-                          : { opacity: 0, x: 20 }
-                      }
-                      transition={{ duration: shouldReduceMotion ? 0.2 : 0.3 }}
-                      className="hidden lg:block lg:w-80 border-l border-surface2 p-4 sm:p-6 bg-surface0 overflow-y-auto no-scroll-snap"
-                    >
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-3">
-                          <span className="text-4xl">{selectedItem.icon}</span>
-                          <h3 className="font-mono font-bold text-text text-lg sm:text-xl">
-                            {selectedItem.name}
-                          </h3>
-                        </div>
-
-                        {"content" in selectedItem && selectedItem.content ? (
-                          <div className="bg-surface1 rounded-lg p-4 max-h-64 overflow-y-auto no-scroll-snap">
-                            <pre className="text-sm font-mono text-subtext1 whitespace-pre-wrap">
-                              {selectedItem.content}
-                            </pre>
-                          </div>
-                        ) : (
-                          <div className="space-y-3">
-                            {"level" in selectedItem && selectedItem.level && (
-                              <div className="flex items-center justify-between">
-                                <span className="text-sm font-mono text-overlay0">
-                                  Level:
-                                </span>
-                                <span
-                                  className={`text-sm font-mono px-2 py-1 rounded ${levelColors[selectedItem.level]} bg-opacity-20`}
-                                >
-                                  {selectedItem.level}
-                                </span>
-                              </div>
-                            )}
-                            {"years" in selectedItem && selectedItem.years && (
-                              <div className="flex items-center justify-between">
-                                <span className="text-sm font-mono text-overlay0">
-                                  Experience:
-                                </span>
-                                <span className="text-sm font-mono text-text">
-                                  {selectedItem.years} year
-                                  {selectedItem.years !== 1 ? "s" : ""}
-                                </span>
-                              </div>
-                            )}
-                            {"projects" in selectedItem &&
-                              selectedItem.projects && (
-                                <div className="flex items-center justify-between">
-                                  <span className="text-sm font-mono text-overlay0">
-                                    Projects:
-                                  </span>
-                                  <span className="text-sm font-mono text-text">
-                                    {selectedItem.projects}
-                                  </span>
-                                </div>
-                              )}
-                          </div>
-                        )}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-
-                {/* Mobile Preview Modal */}
-                <AnimatePresence>
-                  {selectedItem && (
-                    <motion.div
-                      initial={
-                        shouldReduceMotion
-                          ? { opacity: 0 }
-                          : { opacity: 0, y: 20 }
-                      }
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={
-                        shouldReduceMotion
-                          ? { opacity: 0 }
-                          : { opacity: 0, y: 20 }
-                      }
-                      transition={{ duration: shouldReduceMotion ? 0.2 : 0.3 }}
-                      className="lg:hidden fixed inset-x-4 bottom-24 top-auto bg-surface0 border border-surface2 rounded-xl p-4 shadow-xl z-50"
-                    >
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center gap-2">
-                          <span className="text-2xl">{selectedItem.icon}</span>
-                          <h3 className="font-mono font-bold text-text text-lg truncate">
-                            {selectedItem.name}
-                          </h3>
-                        </div>
-                        <button
-                          onClick={() => setSelectedItem(null)}
-                          className="text-overlay0 hover:text-text transition-colors p-1 cursor-pointer"
-                        >
-                          <svg
-                            className="w-5 h-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M6 18L18 6M6 6l12 12"
-                            />
-                          </svg>
-                        </button>
+              {/* File Preview Panel */}
+              <AnimatePresence>
+                {selectedItem && (
+                  <motion.div
+                    initial={
+                      shouldReduceMotion
+                        ? { opacity: 0 }
+                        : { opacity: 0, x: 20 }
+                    }
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={
+                      shouldReduceMotion
+                        ? { opacity: 0 }
+                        : { opacity: 0, x: 20 }
+                    }
+                    transition={{ duration: shouldReduceMotion ? 0.2 : 0.3 }}
+                    className="hidden lg:block lg:w-80 border-l border-surface2 p-4 sm:p-6 bg-surface0 overflow-y-auto no-scroll-snap"
+                  >
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <span className="text-4xl">{selectedItem.icon}</span>
+                        <h3 className="font-mono font-bold text-text text-lg sm:text-xl">
+                          {selectedItem.name}
+                        </h3>
                       </div>
 
                       {"content" in selectedItem && selectedItem.content ? (
-                        <div className="bg-surface1 rounded-lg p-3 max-h-32 overflow-y-auto no-scroll-snap">
+                        <div className="bg-surface1 rounded-lg p-4 max-h-64 overflow-y-auto no-scroll-snap">
                           <pre className="text-sm font-mono text-subtext1 whitespace-pre-wrap">
                             {selectedItem.content}
                           </pre>
                         </div>
                       ) : (
-                        <div className="flex flex-wrap gap-3 text-sm">
+                        <div className="space-y-3">
                           {"level" in selectedItem && selectedItem.level && (
-                            <div className="flex items-center gap-2">
-                              <span className="font-mono text-overlay0">
+                            <div className="flex items-center justify-between">
+                              <span className="text-sm font-mono text-overlay0">
                                 Level:
                               </span>
                               <span
-                                className={`font-mono px-2 py-1 rounded ${levelColors[selectedItem.level]} bg-opacity-20`}
+                                className={`text-sm font-mono px-2 py-1 rounded ${levelColors[selectedItem.level]} bg-opacity-20`}
                               >
                                 {selectedItem.level}
                               </span>
                             </div>
                           )}
                           {"years" in selectedItem && selectedItem.years && (
-                            <div className="flex items-center gap-2">
-                              <span className="font-mono text-overlay0">
-                                Exp:
+                            <div className="flex items-center justify-between">
+                              <span className="text-sm font-mono text-overlay0">
+                                Experience:
                               </span>
-                              <span className="font-mono text-text">
-                                {selectedItem.years}y
+                              <span className="text-sm font-mono text-text">
+                                {selectedItem.years} year
+                                {selectedItem.years !== 1 ? "s" : ""}
                               </span>
                             </div>
                           )}
                           {"projects" in selectedItem &&
                             selectedItem.projects && (
-                              <div className="flex items-center gap-2">
-                                <span className="font-mono text-overlay0">
+                              <div className="flex items-center justify-between">
+                                <span className="text-sm font-mono text-overlay0">
                                   Projects:
                                 </span>
-                                <span className="font-mono text-text">
+                                <span className="text-sm font-mono text-text">
                                   {selectedItem.projects}
                                 </span>
                               </div>
                             )}
                         </div>
                       )}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            </motion.div>
-          )}
-        </motion.div>
-      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Mobile Preview Modal */}
+              <AnimatePresence>
+                {selectedItem && (
+                  <motion.div
+                    initial={
+                      shouldReduceMotion
+                        ? { opacity: 0 }
+                        : { opacity: 0, y: 20 }
+                    }
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={
+                      shouldReduceMotion
+                        ? { opacity: 0 }
+                        : { opacity: 0, y: 20 }
+                    }
+                    transition={{ duration: shouldReduceMotion ? 0.2 : 0.3 }}
+                    className="lg:hidden fixed inset-x-4 bottom-48 top-auto bg-surface0 border border-surface2 rounded-xl p-4 shadow-xl z-50"
+                  >
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-2">
+                        <span className="text-2xl">{selectedItem.icon}</span>
+                        <h3 className="font-mono font-bold text-text text-lg truncate">
+                          {selectedItem.name}
+                        </h3>
+                      </div>
+                      <button
+                        onClick={() => setSelectedItem(null)}
+                        className="text-overlay0 hover:text-text transition-colors p-1 cursor-pointer"
+                      >
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M6 18L18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+
+                    {"content" in selectedItem && selectedItem.content ? (
+                      <div className="bg-surface1 rounded-lg p-3 max-h-32 overflow-y-auto no-scroll-snap">
+                        <pre className="text-sm font-mono text-subtext1 whitespace-pre-wrap">
+                          {selectedItem.content}
+                        </pre>
+                      </div>
+                    ) : (
+                      <div className="flex flex-wrap gap-3 text-sm">
+                        {"level" in selectedItem && selectedItem.level && (
+                          <div className="flex items-center gap-2">
+                            <span className="font-mono text-overlay0">
+                              Level:
+                            </span>
+                            <span
+                              className={`font-mono px-2 py-1 rounded ${levelColors[selectedItem.level]} bg-opacity-20`}
+                            >
+                              {selectedItem.level}
+                            </span>
+                          </div>
+                        )}
+                        {"years" in selectedItem && selectedItem.years && (
+                          <div className="flex items-center gap-2">
+                            <span className="font-mono text-overlay0">
+                              Exp:
+                            </span>
+                            <span className="font-mono text-text">
+                              {selectedItem.years}y
+                            </span>
+                          </div>
+                        )}
+                        {"projects" in selectedItem &&
+                          selectedItem.projects && (
+                            <div className="flex items-center gap-2">
+                              <span className="font-mono text-overlay0">
+                                Projects:
+                              </span>
+                              <span className="font-mono text-text">
+                                {selectedItem.projects}
+                              </span>
+                            </div>
+                          )}
+                      </div>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </motion.div>
+        )}
+      </motion.div>
     </section>
   );
 }
