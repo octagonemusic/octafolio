@@ -303,7 +303,7 @@ export default function AboutSection() {
 
       {/* Terminal Window */}
       <motion.div
-        className="flex-1 flex flex-col max-w-6xl mx-auto w-full pb-24 min-h-0"
+        className="flex-1 flex flex-col max-w-6xl mx-auto w-full pb-55 sm:pb-24 min-h-0"
         initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -370,11 +370,11 @@ export default function AboutSection() {
                 ease: "easeOut",
               }}
               onAnimationComplete={() => {
-                // Prevent scroll reset on tab changes
+                // Reset scroll to top on tab changes
                 const scrollContainer =
                   document.querySelector(".custom-scrollbar");
                 if (scrollContainer) {
-                  scrollContainer.scrollTop = scrollContainer.scrollHeight;
+                  scrollContainer.scrollTop = 0;
                 }
               }}
             >
