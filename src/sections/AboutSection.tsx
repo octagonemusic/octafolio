@@ -350,7 +350,7 @@ export default function AboutSection() {
         <div className="flex-1 bg-surface0 rounded-b-lg border-2 border-blue border-t-0 p-6 overflow-hidden">
           <div
             className="h-full overflow-y-auto custom-scrollbar no-scroll-snap"
-            style={{ scrollBehavior: "auto" }}
+            style={{ scrollBehavior: "smooth" }}
           >
             <motion.div
               className="space-y-6"
