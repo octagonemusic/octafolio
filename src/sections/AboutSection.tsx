@@ -19,6 +19,11 @@ export default function AboutSection() {
   const [whoamiText, setWhoamiText] = useState("");
   const [activeTab, setActiveTab] = useState("background");
   const [contentVisible, setContentVisible] = useState(false);
+  const [currentCommand, setCurrentCommand] = useState("");
+  const [displayedCommand, setDisplayedCommand] = useState("");
+  const [commandOutput, setCommandOutput] = useState("");
+  const [showOutput, setShowOutput] = useState(false);
+  const [currentTime, setCurrentTime] = useState("");
 
   // Typewriter effect for whoami
   useEffect(() => {
@@ -37,6 +42,76 @@ export default function AboutSection() {
     }, 800);
 
     return () => clearTimeout(startDelay);
+  }, []);
+
+  // Shell command animation
+  useEffect(() => {
+    const commands = ["whoami", "uname -a", "cat /etc/hostname", "id"];
+    let cmdIndex = 0;
+
+    const cmdTimer = setInterval(() => {
+      setCurrentCommand(commands[cmdIndex]);
+      cmdIndex = (cmdIndex + 1) % commands.length;
+    }, 6000);
+
+    return () => clearInterval(cmdTimer);
+  }, []);
+
+  // Command typewriter effect
+  useEffect(() => {
+    if (!currentCommand) return;
+
+    setDisplayedCommand("");
+    setShowOutput(false);
+    setCommandOutput("");
+
+    let index = 0;
+
+    const typeTimer = setInterval(() => {
+      if (index <= currentCommand.length) {
+        setDisplayedCommand(currentCommand.slice(0, index));
+        index++;
+      } else {
+        clearInterval(typeTimer);
+        // Show output immediately after command is typed
+        setTimeout(() => {
+          const outputs = {
+            whoami: "<span class='text-mauve'>octagone</span>",
+            "uname -a":
+              "Linux <span class='text-blue'>octagone-arch</span> <span class='text-green'>6.6.52-1-lts</span> #1 SMP <span class='text-yellow'>x86_64</span> <span class='text-peach'>GNU/Linux</span>",
+            "cat /etc/hostname": "<span class='text-blue'>octagone-arch</span>",
+            id: "uid=<span class='text-yellow'>1000</span>(<span class='text-mauve'>octagone</span>) gid=<span class='text-green'>1000</span>(<span class='text-blue'>octagone</span>) groups=<span class='text-peach'>wheel,docker,users</span>",
+          };
+
+          setCommandOutput(
+            outputs[currentCommand as keyof typeof outputs] || "",
+          );
+          setShowOutput(true);
+        }, 200);
+      }
+    }, 80);
+
+    return () => clearInterval(typeTimer);
+  }, [currentCommand]);
+
+  // Real-time clock
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const timeString = now.toLocaleString("en-US", {
+        month: "short",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      });
+      setCurrentTime(timeString);
+    };
+
+    updateTime();
+    const timeTimer = setInterval(updateTime, 1000);
+
+    return () => clearInterval(timeTimer);
   }, []);
 
   // Content animation effect
@@ -273,7 +348,10 @@ export default function AboutSection() {
 
         {/* Terminal Content */}
         <div className="flex-1 bg-surface0 rounded-b-lg border-2 border-blue border-t-0 p-6 overflow-hidden">
-          <div className="h-full overflow-y-auto custom-scrollbar no-scroll-snap">
+          <div
+            className="h-full overflow-y-auto custom-scrollbar no-scroll-snap"
+            style={{ scrollBehavior: "auto" }}
+          >
             <motion.div
               className="space-y-6"
               key={activeTab}
@@ -291,6 +369,14 @@ export default function AboutSection() {
                 duration: shouldReduceMotion ? 0.2 : 0.4,
                 ease: "easeOut",
               }}
+              onAnimationComplete={() => {
+                // Prevent scroll reset on tab changes
+                const scrollContainer =
+                  document.querySelector(".custom-scrollbar");
+                if (scrollContainer) {
+                  scrollContainer.scrollTop = scrollContainer.scrollHeight;
+                }
+              }}
             >
               <p className="text-lg text-text leading-relaxed">
                 {renderHighlightedContent(
@@ -307,6 +393,41 @@ export default function AboutSection() {
                   getHighlights(activeTab, 2),
                 )}
               </p>
+
+              {/* Spacer to push status bar to bottom */}
+              <div className="flex-1"></div>
+
+              {/* Terminal Status Bar - Always at bottom */}
+              <div className="mt-auto pt-4 border-t border-overlay0">
+                <div className="font-mono text-base space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="text-overlay1">~/octagone %</span>
+                    <span className="text-subtext0">{displayedCommand}</span>
+                    <motion.span
+                      className="text-mauve"
+                      animate={{ opacity: [1, 0] }}
+                      transition={{
+                        duration: 0.8,
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                      }}
+                    >
+                      {displayedCommand.length < currentCommand.length
+                        ? "|"
+                        : ""}
+                    </motion.span>
+                  </div>
+                  <div className="flex justify-between items-start">
+                    <div
+                      className="text-subtext0 leading-tight flex-1"
+                      dangerouslySetInnerHTML={{
+                        __html: showOutput ? commandOutput : "&nbsp;",
+                      }}
+                    ></div>
+                    <div className="text-overlay0 ml-4">{currentTime}</div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
