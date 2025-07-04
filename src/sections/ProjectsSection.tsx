@@ -157,7 +157,7 @@ export default function ProjectsSection() {
   const [terminalText, setTerminalText] = useState("");
   const [showRepos, setShowRepos] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [viewMode, setViewMode] = useState<"list" | "grid">("list");
+
   const [currentTime, setCurrentTime] = useState("");
 
   // Terminal typewriter effect
@@ -301,15 +301,6 @@ export default function ProjectsSection() {
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <button
-                    onClick={() =>
-                      setViewMode(viewMode === "list" ? "grid" : "list")
-                    }
-                    className="hidden sm:flex items-center gap-1 text-subtext0 hover:text-text transition-colors p-1 bg-surface1 hover:bg-surface2 rounded font-mono text-xs cursor-pointer"
-                  >
-                    {viewMode === "list" ? "⊞" : "☰"}
-                    <span>{viewMode === "list" ? "Grid" : "List"}</span>
-                  </button>
                   <span className="text-overlay0 text-xs font-mono">
                     {currentTime}
                   </span>
@@ -334,13 +325,7 @@ export default function ProjectsSection() {
               <div className="flex h-full">
                 {/* Main Repository List */}
                 <div className="flex-1 p-4 overflow-y-auto custom-scrollbar no-scroll-snap">
-                  <div
-                    className={
-                      viewMode === "grid"
-                        ? "grid grid-cols-1 lg:grid-cols-2 gap-4"
-                        : "space-y-4"
-                    }
-                  >
+                  <div className="space-y-4">
                     {projects.map((project) => (
                       <motion.div
                         key={project.id}
