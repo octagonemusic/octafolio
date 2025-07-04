@@ -280,10 +280,10 @@ export default function ContactSection() {
                   <div className="flex items-center gap-3">
                     <span className="text-mauve">📧</span>
                     <a
-                      href="mailto:bhargavprasad2025@gmail.com"
+                      href="mailto:bhargavprasad.dev@gmail.com"
                       className="text-text hover:text-blue transition-colors font-mono text-[1rem] cursor-pointer"
                     >
-                      bhargavprasad2025@gmail.com
+                      bhargavprasad.dev@gmail.com
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
