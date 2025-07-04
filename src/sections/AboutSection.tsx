@@ -244,7 +244,7 @@ export default function AboutSection() {
     >
       {/* Header */}
       <motion.div
-        className="flex-shrink-0 pt-8 pb-6"
+        className="flex-shrink-0 pt-8 pb-4"
         initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -255,9 +255,9 @@ export default function AboutSection() {
         }
         style={{ transform: "translateZ(0)" }}
       >
-        <div className="text-center mb-6">
+        <div className="text-center mb-4">
           <motion.h2
-            className="text-4xl sm:text-6xl font-bold font-mono text-text mb-4"
+            className="text-3xl sm:text-5xl font-bold font-mono text-text mb-4"
             initial={
               shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.95 }
             }
@@ -272,7 +272,7 @@ export default function AboutSection() {
             About Me
           </motion.h2>
           <motion.div
-            className="text-sm xs:text-lg sm:text-xl lg:text-2xl font-mono text-overlay0"
+            className="text-sm xs:text-lg sm:text-xl lg:text-xl font-mono text-overlay0"
             initial={
               shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }
             }
